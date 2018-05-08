@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"time"
 )
 
 type LogProcess struct {
@@ -33,10 +34,12 @@ func main() {
 	}
 
 	// read log file
-	lp.Read()
+	go lp.Read()
 	// process log
-	lp.Process()
+	go lp.Process()
 	// write data
-	lp.Write()
+	go lp.Write()
+
+	time.Sleep(time.Second)
 }
 
