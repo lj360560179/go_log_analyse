@@ -145,6 +145,7 @@ func (w *WriteToInfluxDB) Write(wc chan *Message) {
 		Username: infSli[1],
 		Password: infSli[2],
 	})
+	fmt.Println(1)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -245,7 +246,7 @@ func (l *LogProcess) Process() {
 func main() {
 	var path, influxDsn string
 	flag.StringVar(&path, "path", "./access.log", "read file path")
-	flag.StringVar(&influxDsn, "influxDsn", "http://127.0.0.1:8086@imooc@imoocpass@imooc@s", "influx data source")
+	flag.StringVar(&influxDsn, "influxDsn", "http://172.16.1.113:8086@lj@ljjj@ljdb@s", "influx data source")
 	flag.Parse()
 
 	r := &ReadFromFile{
