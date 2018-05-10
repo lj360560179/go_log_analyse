@@ -145,13 +145,13 @@ func (w *WriteToInfluxDB) Write(wc chan *Message) {
 		Username: infSli[1],
 		Password: infSli[2],
 	})
-	fmt.Println(1)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	for v := range wc {
 		// Create a new point batch
+
 		bp, err := client.NewBatchPoints(client.BatchPointsConfig{
 			Database:  infSli[3],
 			Precision: infSli[4],
@@ -195,6 +195,7 @@ func (l *LogProcess) Process() {
 
 	loc, _ := time.LoadLocation("Asia/Shanghai")
 	for v := range l.rc {
+		fmt.Println(v)
 		ret := r.FindStringSubmatch(string(v))
 		if len(ret) != 14 {
 			TypeMonitorChan <- TypeErrNum
