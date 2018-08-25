@@ -247,7 +247,7 @@ func (l *LogProcess) Process() {
 func main() {
 	var path, influxDsn string
 	flag.StringVar(&path, "path", "./access.log", "read file path")
-	flag.StringVar(&influxDsn, "influxDsn", "http://172.16.1.113:8086@lj@ljjj@ljdb@s", "influx data source")
+	flag.StringVar(&influxDsn, "influxDsn", "http://172.16.1.113:8086@lj@ljjj@ljdb@s", "influx")
 	flag.Parse()
 
 	r := &ReadFromFile{
