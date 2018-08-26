@@ -107,7 +107,7 @@ func (m *Monitor) start(lp *LogProcess) {
 		io.WriteString(writer, string(ret))
 	})
 
-	http.ListenAndServe(":9193", nil)
+	http.ListenAndServe(":9999", nil)
 }
 
 func (r *ReadFromFile) Read(rc chan []byte) {
