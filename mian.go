@@ -14,7 +14,7 @@ import (
 	"flag"
 	"net/http"
 	"github.com/influxdata/influxdb/client/v2"
-	"github.com/gin-gonic/gin/json"
+		"encoding/json"
 )
 
 type Reader interface {
